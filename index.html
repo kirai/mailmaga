@@ -19,11 +19,19 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="emails">
-  {{#each model}}
-  {{id}}
-  {{email}}
-  {{date}}
-  {{/each}}
+  <ul>
+    {{#each model}}
+    {{#link-to 'email' this}} {{email}} {{/link-to}} <br/>
+    {{/each}}
+  </ul>
+  {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="email">
+  Id   : {{id}} <br/> 
+  Email: {{email}} <br/>
+  Name : {{name}} <br/>
+  Notes: {{notes}}
   </script>
 
   <script src="js/libs/jquery-1.9.1.js"></script>
